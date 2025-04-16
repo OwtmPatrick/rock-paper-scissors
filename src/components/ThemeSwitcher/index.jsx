@@ -21,10 +21,15 @@ export const ThemeSwitcher = () => {
   }, []);
 
   return (
-    <div className='flex justify-end'>
-      <button type='button' className='cursor-pointer' onClick={onThemeSwitch}>
-        <img src={theme === themeConst.light ? moonIcon : sunIcon} />
-      </button>
-    </div>
+    <button
+      type='button'
+      className='absolute top-8 right-8 cursor-pointer w-12 h-12 lg:w-24 lg:h-24'
+      onClick={onThemeSwitch}
+    >
+      <img
+        src={theme === themeConst.light ? moonIcon : sunIcon}
+        alt='theme icon'
+      />
+    </button>
   );
 };

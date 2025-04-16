@@ -12,6 +12,7 @@ export const theme = (state = initialState, action) => {
 
       return theme;
     }
+
     default:
       return state;
   }
