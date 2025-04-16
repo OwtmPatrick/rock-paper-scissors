@@ -1,18 +1,20 @@
 import './App.css';
-import { Provider } from 'react-redux';
-import { store } from './store';
+import { useSelector } from 'react-redux';
+import { currentPageSelector } from './store/selectors';
 import { StartPage } from './pages/Start';
+import { GamePage } from './pages/Game';
+import { pages } from './constants';
 import { ThemeSwitcher } from './components/ThemeSwitcher';
 
 function App() {
-  return (
-    <Provider store={store}>
-      <main className='relative flex items-center justify-center bg-grey-300 dark:bg-gray-800'>
-        <ThemeSwitcher />
+  const currentPage = useSelector(currentPageSelector);
 
-        <StartPage />
-      </main>
-    </Provider>
+  return (
+    <main className='relative flex items-center justify-center bg-grey-300 dark:bg-gray-800'>
+      <ThemeSwitcher />
+
+      {currentPage === pages.start ? <StartPage /> : <GamePage />}
+    </main>
   );
 }
 
