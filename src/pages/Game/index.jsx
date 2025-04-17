@@ -48,20 +48,22 @@ export const GamePage = () => {
         </p>
       )}
 
-      <div className='flex flex-col gap-2 md:flex-row items-center justify-between w-[100%] max-w-[345px] text-black dark:text-white'>
-        <Image
-          item={playersItems.player}
-          flipped={
-            playersItems.player === items.rock ||
-            playersItems.player === items.scissors
-          }
-        />
-        <span className='text-xl'>VS</span>
-        <Image
-          item={playersItems.computer}
-          flipped={playersItems.computer === items.paper}
-        />
-      </div>
+      {winner && (
+        <div className='flex flex-col gap-2 md:flex-row items-center justify-between w-[100%] max-w-[345px] text-black dark:text-white'>
+          <Image
+            item={playersItems.player}
+            flipped={
+              playersItems.player === items.rock ||
+              playersItems.player === items.scissors
+            }
+          />
+          <span className='text-xl'>VS</span>
+          <Image
+            item={playersItems.computer}
+            flipped={playersItems.computer === items.paper}
+          />
+        </div>
+      )}
 
       <div className='flex flex-col gap-4 md:gap-6'>
         <p className='text-sm font-medium text-grey-800 dark:text-grey-300 text-center'>
