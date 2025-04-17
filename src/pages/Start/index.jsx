@@ -15,7 +15,7 @@ export const StartPage = () => {
         PLAY
       </Button>
 
-      <p className='text-lg lg:text-[37px] lg:leading-[122%] text-blue-800 dark:text-grey-500'>
+      <p className='text-lg lg:text-[37px] font-bold lg:leading-[122%] text-blue-800 dark:text-grey-500'>
         Rock Paper Scissors <br />
         The game
       </p>

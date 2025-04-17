@@ -17,13 +17,13 @@ export const GamePage = () => {
 
   return (
     <div className='flex flex-col items-center gap-6 lg:gap-8'>
-      <h1 className='text-blue-800 dark:text-grey-500 text-xl lg:text-3xl'>
+      <h1 className='text-blue-800 dark:text-grey-500 text-xl lg:text-3xl font-bold'>
         Rock Paper Scissors
       </h1>
 
       <div className='flex flex-col items-center gap-2 lg:gap-4 text-black dark:text-white'>
         <button
-          className='cursor-pointer max-w-[184px] text-md lg:text-xl'
+          className='cursor-pointer max-w-[184px] text-md lg:text-xl font-bold'
           type='button'
           onClick={onResetGame}
         >
@@ -41,7 +41,7 @@ export const GamePage = () => {
       </div>
 
       {winner && (
-        <p className='font-semibold uppercase text-xl lg:text-[40px] text-red-800 dark:text-blue-300'>
+        <p className='font-bold uppercase text-xl lg:text-[40px] text-red-800 dark:text-blue-300'>
           {winner === 'you' || winner === 'computer'
             ? `${winner} won! 🎉`
             : winner}
