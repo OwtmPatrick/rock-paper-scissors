@@ -41,28 +41,18 @@ export const GamePage = () => {
       </div>
 
       {winner && (
-        <p className='font-bold uppercase text-xl lg:text-[40px] text-red-800 dark:text-blue-300'>
-          {winner === 'you' || winner === 'computer'
-            ? `${winner} won! 🎉`
-            : winner}
-        </p>
-      )}
-
-      {winner && (
-        <div className='flex flex-col gap-2 md:flex-row items-center justify-between w-[100%] max-w-[345px] text-black dark:text-white'>
-          <Image
-            item={playersItems.player}
-            flipped={
-              playersItems.player === items.rock ||
-              playersItems.player === items.scissors
-            }
-          />
-          <span className='text-xl'>VS</span>
-          <Image
-            item={playersItems.computer}
-            flipped={playersItems.computer === items.paper}
-          />
-        </div>
+        <>
+          <p className='font-bold uppercase text-xl lg:text-[40px] text-red-800 dark:text-blue-300'>
+            {winner === 'you' || winner === 'computer'
+              ? `${winner} won! 🎉`
+              : winner}
+          </p>
+          <div className='flex flex-col gap-2 md:flex-row items-center justify-between w-[100%] max-w-[345px] text-black dark:text-white'>
+            <Image item={playersItems.player} flipped />
+            <span className='text-xl'>VS</span>
+            <Image item={playersItems.computer} />
+          </div>
+        </>
       )}
 
       <div className='flex flex-col gap-4 md:gap-6'>
